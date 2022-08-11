@@ -1,23 +1,7 @@
+import { toggleLoading } from "./toggleLoading.js";
+import { createUserElement } from "./createUserElement.js";
+
 const URL = 'https://jsonplaceholder.typicode.com/users';
-
-const toggleLoading = () => {
-    const loadingHTML = document.querySelector('#loader');
-    const isLoadingHide = loadingHTML.hasAttribute('hidden');
-    if (isLoadingHide) {
-        loadingHTML.removeAttribute('hidden');
-    } else {
-        loadingHTML.setAttribute('hidden', '');
-    }
-}
-
-const createUserElement = (userName) => {
-    const liElem = document.createElement('li');
-    const refElem = document.createElement('a');
-    refElem.setAttribute('href', '#');
-    refElem.textContent = userName;
-    liElem.append(refElem);
-    return liElem;
-}
 
 const listHTML = document.querySelector('#data-container');
 
